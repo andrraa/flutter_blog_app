@@ -2,12 +2,19 @@ import 'package:blog_app/cores/theme/app_pallete.dart';
 import 'package:flutter/material.dart';
 
 class AuthButton extends StatelessWidget {
-  const AuthButton({super.key});
+  final String title;
+  final VoidCallback onTap;
+
+  const AuthButton({
+    super.key,
+    required this.title,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onTap,
       style: ElevatedButton.styleFrom(
         backgroundColor: AppPallete.primaryColor,
         foregroundColor: AppPallete.whiteColor,
@@ -17,9 +24,9 @@ class AuthButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
         ),
       ),
-      child: const Text(
-        'Sign In',
-        style: TextStyle(
+      child: Text(
+        title,
+        style: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.bold,
         ),

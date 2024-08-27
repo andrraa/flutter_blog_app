@@ -3,20 +3,25 @@ import 'package:blog_app/cores/theme/app_pallete.dart';
 import 'package:flutter/material.dart';
 
 class AuthHeader extends StatelessWidget {
-  const AuthHeader({super.key});
+  final String title;
+
+  const AuthHeader({
+    super.key,
+    required this.title,
+  });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: context.screenHeight * 0.18,
       width: double.infinity,
-      child: const Align(
+      child: Align(
         alignment: Alignment.centerLeft,
         child: Padding(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: Text(
-            'Sign In',
-            style: TextStyle(
+            title,
+            style: const TextStyle(
               color: AppPallete.whiteColor,
               fontSize: 32,
               fontWeight: FontWeight.w700,

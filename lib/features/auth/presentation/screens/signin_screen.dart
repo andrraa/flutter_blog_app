@@ -1,3 +1,4 @@
+import 'package:blog_app/cores/route/app_route.dart';
 import 'package:blog_app/cores/theme/app_pallete.dart';
 import 'package:blog_app/cores/widget/app_version.dart';
 import 'package:blog_app/features/auth/presentation/widgets/auth_button.dart';
@@ -24,7 +25,9 @@ class _SignInScreenState extends State<SignInScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            const AuthHeader(),
+            const AuthHeader(
+              title: 'Sign In',
+            ),
             Expanded(
               child: Container(
                 width: double.infinity,
@@ -66,7 +69,6 @@ class _SignInScreenState extends State<SignInScreen> {
                           const SizedBox(height: 20),
                           AuthFormField(
                             hintText: 'Email',
-                            isObsecure: false,
                             controller: emailController,
                           ),
                           const SizedBox(height: 20),
@@ -90,9 +92,18 @@ class _SignInScreenState extends State<SignInScreen> {
                             ),
                           ),
                           const SizedBox(height: 20),
-                          const AuthButton(),
+                          AuthButton(
+                            title: 'Sign In',
+                            onTap: () {},
+                          ),
                           const SizedBox(height: 20),
-                          const AuthFooter(),
+                          AuthFooter(
+                            title: 'Don\'t have an account? ',
+                            subTitle: 'Sign Up',
+                            onTap: () {
+                              Navigator.push(context, AppRoute.signUpRoute());
+                            },
+                          ),
                         ],
                       ),
                       const AppVersion(),

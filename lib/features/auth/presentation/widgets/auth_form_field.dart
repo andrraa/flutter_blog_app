@@ -9,7 +9,7 @@ class AuthFormField extends StatelessWidget {
   const AuthFormField({
     super.key,
     required this.hintText,
-    required this.isObsecure,
+    this.isObsecure = false,
     required this.controller,
   });
 
