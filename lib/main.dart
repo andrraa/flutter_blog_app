@@ -1,5 +1,5 @@
 import 'package:blog_app/cores/theme/app_theme.dart';
-import 'package:blog_app/features/auth/presentation/screens/signin_screen.dart';
+import 'package:blog_app/cores/widgets/app_menu.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class BlogApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      home: const SignInScreen(),
+      home: const AppMenu(),
     );
   }
 }
